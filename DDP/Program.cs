@@ -1,13 +1,12 @@
 ﻿using DecoratorDesignPattern.DDP;
 
-//Step 1 : Main interface  
+
 public interface IComponentPasswordReader
 {
     string Read();
 }
 
 
-//Step 2 : Interface implementation
 public class ComponentPasswordReader : IComponentPasswordReader
 {
     public string Read()
@@ -17,7 +16,6 @@ public class ComponentPasswordReader : IComponentPasswordReader
 }
 
 
-//Step 3 : We need to have the date in persian calendar so we create a new component for that
 public class ComponentHashedPasswordReaderDecorator : IComponentPasswordReader
 {
     private readonly IComponentPasswordReader _componentPasswordReader;
@@ -32,7 +30,6 @@ public class ComponentHashedPasswordReaderDecorator : IComponentPasswordReader
 }
 
 
-//Step 4 : Check output result
 public class CheckResult
 {
     static void Main(string[] args)
